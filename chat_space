@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Chat Page</title>
+<script>
+function sendMessage() {
+  var message = document.getElementById('message').value;
+  var chatWindow = document.getElementById('chatWindow');
+  chatWindow.innerHTML += "<p>" + message + "</p>";
+  document.getElementById('message').value = ''; // Clear input field
+}
+
+function uploadFile() {
+  alert('File upload functionality requires backend implementation.');
+}
+</script>
+</head>
+<body>
+<h2>Chat Room</h2>
+<div id="chatWindow" style="border:1px solid #aaa; height: 200px; overflow-y: scroll; padding: 5px;">
+  <!-- Messages will appear here -->
+</div>
+<input type="text" id="message" placeholder="Type a message...">
+<button onclick="sendMessage()">Send</button>
+<br><br>
+<input type="file" id="file" onchange="uploadFile()">
+<button onclick="uploadFile()">Upload</button>
+</body>
+</html>
